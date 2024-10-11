@@ -1,5 +1,10 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Link,
+  Navigate,
+} from "react-router-dom";
 
 // Home Page
 const Home = () => (
@@ -208,6 +213,8 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/work" element={<Work />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/PersonalSite" element={<Navigate to="/" />} />
+            <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </main>
       </div>
