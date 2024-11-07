@@ -1,3 +1,4 @@
+/*************  ✨ Codeium Command 🌟  *************/
 import {
   BrowserRouter as Router,
   Route,
@@ -5,53 +6,55 @@ import {
   Link,
   Navigate,
 } from "react-router-dom";
+import { Container, Row, Col, Button, Navbar, Nav } from "react-bootstrap";
 
 // Home Page
+// Define a centralized theme or style configuration for consistent styling
+
+const resumeUrl = import.meta.env.VITE_RESUME_URL;
+const githubUrl = import.meta.env.VITE_GITHUB_URL;
+
 const Home = () => (
-  <div className="flex flex-col items-start justify-center h-screen text-left p-8">
-    <h1 className="text-5xl font-bold text-white mb-6">Jamaal Bernabe</h1>
-    <h2 className="text-2xl text-blue-500 mb-6">Software Developer</h2>
-    <p className="text-gray-400 max-w-xl mb-8">
-      Innovating technology through scalable solutions in software development,
-      automation, and cloud integration. Expertise in Python, Java, and
-      AI-driven platforms.
-    </p>
-    <div className="space-x-4">
-      <Link
-        to="/work"
-        className="px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition"
-      >
-        Explore My Work
-      </Link>
-
-      {/* Link to Resume */}
-      <a
-        href="src\assets\Jamaal Bernabe - Resume.pdf" // Replace this with the actual URL to your resume
-        target="_blank"
-        rel="noopener noreferrer"
-        className="px-6 py-3 bg-gray-600 text-white rounded-full hover:bg-gray-700 transition"
-      >
-        View My Resume
-      </a>
-    </div>
-
-    {/* GitHub Link */}
-    <div className="mt-8">
-      <a
-        href="https://github.com/jnbernabe"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-blue-500 hover:underline"
-      >
-        Visit My GitHub Profile
-      </a>
-    </div>
-  </div>
+  <Container className="d-flex flex-column justify-content-center h-100 text-left py-4">
+    <Row>
+      <Col>
+        <h1 className="display-4 text-white mb-4">Jamaal Bernabe</h1>
+        <h2 className="h4 text-primary mb-4">Software Developer</h2>
+        <p className="text-muted mb-4">
+          Innovating technology through scalable solutions in software
+          development, automation, and cloud integration. Expertise in Python,
+          Java, and AI-driven platforms.
+        </p>
+        <div className="d-flex">
+          <Button variant="primary" className="me-2" href="/work">
+            Explore My Work
+          </Button>
+          <Button
+            variant="secondary"
+            href={resumeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View My Resume
+          </Button>
+        </div>
+        <div className="mt-4">
+          <a
+            href={githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary"
+          >
+            Visit My GitHub Profile
+          </a>
+        </div>
+      </Col>
+    </Row>
+  </Container>
 );
-
 // About Page, Work Page, Projects Page remain unchanged
 const About = () => (
-  <div className="flex flex-col items-start justify-center h-screen text-left p-8">
+  <Container className="flex flex-col items-start justify-center h-screen text-left py-4">
     <h1 className="text-5xl font-bold text-white mb-6">About Me</h1>
     <p className="text-gray-400 max-w-xl mb-8">
       I’m Jamaal Bernabe, a passionate software developer with a focus on
@@ -60,7 +63,7 @@ const About = () => (
       with a background in biochemistry and a strong dedication to technology.
     </p>
     <h2 className="text-3xl text-blue-500 mb-4">Key Skills</h2>
-    <ul className="text-gray-400 text-xl list-disc list-inside mb-8">
+    <ul className="list-disc list-inside text-gray-400 text-xl mb-8">
       <li>Python, Java, JavaScript, C#, Node.js</li>
       <li>Flask, AngularJS, React, Selenium, JUnit</li>
       <li>Azure, AWS, Google Cloud</li>
@@ -84,144 +87,153 @@ const About = () => (
         LinkedIn Profile
       </a>
     </div>
-  </div>
+  </Container>
 );
 
 const Work = () => (
-  <div className="flex flex-col items-start justify-center h-screen text-left p-8">
-    <h1 className="text-5xl font-bold text-white mb-6">Work Experience</h1>
-    <div className="text-gray-400 max-w-xl mb-8">
-      <h2 className="text-3xl text-blue-500 mb-4">
-        Aficio AI (Feb 2024 – Jul 2024)
-      </h2>
-      <p className="mb-6">
-        <h3 className="text-2xl text-blue-500 mb-4">Software Developer</h3>
-
-        <ul className="text-gray-400 text-xl list-disc  mb-8">
-          <li>
-            Integrated Azure and AWS platforms, streamlining data processing
-            pipelines
-          </li>
-          <li>
-            Optimized Azure infrastructure for restful APIs, boosting system
-            scalability by 20%
-          </li>
-          <li>
-            Redesigned core application frameworks, reducing code complexity and
-            enhancing performance by 30%
-          </li>
-          <li>
-            Integrated OpenAI and Nylas APIs, improving platform functionality
-            by 30%
-          </li>
-        </ul>
-      </p>
+  <Container className="d-flex flex-column justify-content-center h-100 text-left py-4">
+    <h1 className="display-4 text-white mb-4">Work Experience</h1>
+    <div className="text-muted max-w-xl mb-4">
+      <h2 className="h4 text-primary mb-2">Aficio AI (Feb 2024 – Jul 2024)</h2>
+      <h3 className="h5 text-primary mb-3">Software Developer</h3>
+      <ul className="text-muted mb-4">
+        <li>
+          Integrated Azure and AWS platforms, streamlining data processing
+          pipelines
+        </li>
+        <li>
+          Optimized Azure infrastructure for restful APIs, boosting system
+          scalability by 20%
+        </li>
+        <li>
+          Redesigned core application frameworks, reducing code complexity and
+          enhancing performance by 30%
+        </li>
+        <li>
+          Integrated OpenAI and Nylas APIs, improving platform functionality by
+          30%
+        </li>
+      </ul>
     </div>
-    <div className="text-gray-400 max-w-xl mb-8">
-      <h2 className="text-3xl text-blue-500 mb-4">
+    <div className="text-muted max-w-xl mb-4">
+      <h2 className="h4 text-primary mb-2">
         Ministry of Children, Community, and Social Services (Aug 2023 – Aug
         2024)
       </h2>
-      <p className="mb-6 ">
-        <h3 className="text-2xl text-blue-500 mb-4">
-          Junior Software Automation Tester
-        </h3>
-        <ul className="text-gray-400 text-xl list-disc  mb-8">
-          <li>
-            Developed automated test scripts with Selenium and JUnit, reducing
-            manual testing time by 50%.
-          </li>
-
-          <li>
-            Migrated testing environments to Java 17, improving system
-            reliability by 33%.
-          </li>
-          <li>
-            Implemented CI/CD pipelines for automated testing, reducing manual
-            testing time by 50%.
-          </li>
-          <li>
-            Optimized web application performance, increasing user experience by
-            50%.
-          </li>
-        </ul>
-      </p>
+      <h3 className="h5 text-primary mb-3">
+        Junior Software Automation Tester
+      </h3>
+      <ul className="text-muted mb-4">
+        <li>
+          Developed automated test scripts with Selenium and JUnit, reducing
+          manual testing time by 50%.
+        </li>
+        <li>
+          Migrated testing environments to Java 17, improving system reliability
+          by 33%.
+        </li>
+        <li>
+          Implemented CI/CD pipelines for automated testing, reducing manual
+          testing time by 50%.
+        </li>
+        <li>
+          Optimized web application performance, increasing user experience by
+          50%.
+        </li>
+      </ul>
     </div>
-  </div>
+  </Container>
 );
-
 const Projects = () => (
-  <div className="flex flex-col items-start justify-center h-screen text-left p-8">
-    <h1 className="text-5xl font-bold text-white mb-6">Projects</h1>
-    <div className="text-gray-400 max-w-xl mb-8">
-      <h2 className="text-3xl text-blue-500 mb-4">
-        Capstone AI Project – Centennial College
+  <Container className="d-flex flex-column justify-content-center h-100 text-left p-4">
+    <h1 className="display-4 text-white mb-4">Projects</h1>
+    <div className="text-muted mb-4">
+      <h2 className="h4 text-primary mb-3">
+        Bird Image Classifier – Centennial College
       </h2>
-      <p className="mb-6">
-        Developed AI-powered applications using Python, TensorFlow, and
-        Scikit-learn, integrating machine learning models into cloud-based
-        platforms (Azure, AWS) for automated data analysis and processing.
-      </p>
+      <ul className="text-muted list-unstyled">
+        <li>
+          Implemented a Convolutional Neural Network (CNN) to classify images of
+          different birds. Achieved 81% accuracy using TensorFlow and Keras.
+        </li>
+        <li>
+          Implemented a user-friendly interface that improved accessibility for
+          visually impaired users, increasing engagement by 40%.
+        </li>
+      </ul>
     </div>
-    <div className="text-gray-400 max-w-xl mb-8">
-      <h2 className="text-3xl text-blue-500 mb-4">
-        Real-Time Data Stream Processing – Aficio AI
-      </h2>
-      <p>
-        Leveraged large language models (LLMs) in the Azure cloud to process and
-        summarize real-time streamed data, providing enhanced insights for data
-        analysis.
-      </p>
+    <div className="text-muted mb-4">
+      <h2 className="h4 text-primary mb-3">AWS Polly Translate</h2>
+      <ul className="text-muted list-unstyled">
+        <li>
+          Implemented a user-friendly interface that improved accessibility for
+          visually impaired users, increasing engagement by 40%.
+        </li>
+        <li>
+          Participated in the design and implementation of key features, such as
+          grade estimation, assignment management, course tracking, and user
+          authentication (OAuth 2.0).
+        </li>
+      </ul>
     </div>
-  </div>
+    <div className="text-muted mb-4">
+      <h2 className="h4 text-primary mb-3">NaviGrade</h2>
+      <ul className="text-muted list-unstyled">
+        <li>
+          Designed and created a task tracking site aimed towards students,
+          utilizing MongoDB, Express, NodeJS, and React.
+        </li>
+        <li>
+          Implemented a user-friendly interface that improved accessibility for
+          visually impaired users, increasing engagement by 40%.
+        </li>
+        <li>
+          Participated in the design and implementation of key features, such as
+          grade estimation, assignment management, course tracking, and user
+          authentication (OAuth 2.0).
+        </li>
+      </ul>
+    </div>
+  </Container>
 );
 
 const App = () => {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-900 flex">
-        {/* Left-Side Navigation */}
-        <nav className="bg-gray-800 w-1/6 min-h-screen flex flex-col justify-center items-start p-4">
-          <ul className="space-y-8 text-left text-2xl font-semibold text-gray-300">
-            <li>
-              <Link to="/" className="hover:text-white">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link to="/about" className="hover:text-white">
-                About
-              </Link>
-            </li>
-            <li>
-              <Link to="/work" className="hover:text-white">
-                Work
-              </Link>
-            </li>
-            <li>
-              <Link to="/projects" className="hover:text-white">
-                Projects
-              </Link>
-            </li>
-          </ul>
-        </nav>
+      <Navbar bg="dark" variant="dark" className="px-4">
+        <Container>
+          <Navbar.Brand as={Link} to="/">
+            Jamaal Bernabe
+          </Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link as={Link} to="/about">
+              About
+            </Nav.Link>
+            <Nav.Link as={Link} to="/work">
+              Work
+            </Nav.Link>
+            <Nav.Link as={Link} to="/projects">
+              Projects
+            </Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
+      <main className="flex-1 container mx-auto px-4 flex flex-col items-start justify-center text-left">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/work" element={<Work />} />
+          <Route path="/projects" element={<Projects />} />
+          {/* Redirect /PersonalSite to Home */}
+          <Route path="/PersonalSite" element={<Navigate to="/" />} />
 
-        {/* Main Content */}
-        <main className="flex-1 container mx-auto px-4 flex flex-col items-start justify-center text-left">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/work" element={<Work />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/PersonalSite" element={<Navigate to="/" />} />
-            <Route path="*" element={<Navigate to="/" />} />
-          </Routes>
-        </main>
-      </div>
+          {/* Handle 404: Redirect any unmatched routes to Home */}
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </main>
 
-      {/* Footer */}
       <footer className="bg-gray-800 w-full py-4">
-        <div className="container mx-auto flex justify-between text-gray-400">
+        <Container className="flex justify-between text-gray-400">
           <p>© 2024 Jamaal Bernabe. All rights reserved.</p>
           <div className="flex space-x-4">
             <a href="#" className="hover:text-white">
@@ -231,10 +243,12 @@ const App = () => {
               Terms of Service
             </a>
           </div>
-        </div>
+        </Container>
       </footer>
     </Router>
   );
 };
 
 export default App;
+
+/******  d34bcd3e-f908-469b-8912-d7999ce7bc1f  *******/
