@@ -234,7 +234,7 @@ const App = () => {
       <footer className="bg-secondary text-center py-3">
         <Container>
           <p className="mb-0 text-light small">
-            © 2023 Jamaal Bernabe. All rights reserved.
+            © 2024 Jamaal Bernabe. All rights reserved.
           </p>
         </Container>
       </footer>
