@@ -229,7 +229,6 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/work" element={<Work />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Container>
       <footer className="bg-secondary text-center py-3">
