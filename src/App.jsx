@@ -30,7 +30,7 @@ const Home = () => (
         <div className="d-flex justify-content-center mb-4">
           <Button variant="primary" className="text-primary text-light">
             <Link
-              to="/Jamaal Bernabe - Resume.pdf"
+              to="Portfolio/Jamaal Bernabe - Resume.pdf"
               target="_blank"
               className="text-light"
             >
