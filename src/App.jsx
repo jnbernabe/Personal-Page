@@ -29,11 +29,8 @@ const Home = () => (
           development, automation, and cloud integration.
         </p>
         <div className="d-flex justify-content-center mb-4">
-          <Button variant="primary" className="me-3" href="/work">
-            Explore My Work
-          </Button>
           <Button
-            variant="secondary"
+            variant="primary"
             href={resumeUrl}
             target="_blank"
             rel="noopener noreferrer"
