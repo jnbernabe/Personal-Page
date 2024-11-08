@@ -132,7 +132,7 @@ const Work = () => (
 );
 
 const Projects = () => (
-  <Container className="d-lg-flex flex-column justify-content-center min-vh-50 text-left align-content-center">
+  <Container className="d-flex flex-column justify-content-center min-vh-50 text-left py-5">
     <Row className="justify-content-md-center">
       <Col md="auto" className="d-flex justify-content-center">
         <h1 className="display-4 text-light mb-3 ">Projects</h1>
