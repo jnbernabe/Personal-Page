@@ -135,14 +135,14 @@ const Work = () => (
 );
 
 const Projects = () => (
-  <Container className="d-flex flex-column justify-content-center min-vh-50 text-left py-5 ">
+  <Container className="d-lg-flex flex-column justify-content-center min-vh-50 text-left align-content-center">
     <Row className="justify-content-md-center">
       <Col md="auto" className="d-flex justify-content-center">
         <h1 className="display-4 text-light mb-3 ">Projects</h1>
       </Col>
     </Row>
     <br />
-    <Container className="d-lg-flex p-lg-5 mx-lg-auto px-lg-auto justify-content-center">
+    <Container className="d-lg-flex align-content-center justify-content-center">
       <Card bg="dark">
         <h2 className="h5 text-primary text-center">Bird Image Classifier</h2>
         <ul className="text-light small mt-2">
@@ -229,6 +229,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/work" element={<Work />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Container>
       <footer className="bg-secondary text-center py-3">
