@@ -15,8 +15,6 @@ import {
   Card,
 } from "react-bootstrap";
 
-import resume from "../public/Jamaal Bernabe - Resume.pdf";
-
 const githubUrl = import.meta.env.VITE_GITHUB_URL;
 
 const Home = () => (
