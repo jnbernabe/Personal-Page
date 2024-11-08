@@ -15,7 +15,6 @@ import {
   Card,
 } from "react-bootstrap";
 
-const resumeUrl = import.meta.env.VITE_RESUME_URL;
 const githubUrl = import.meta.env.VITE_GITHUB_URL;
 
 const Home = () => (
@@ -29,13 +28,14 @@ const Home = () => (
           development, automation, and cloud integration.
         </p>
         <div className="d-flex justify-content-center mb-4">
-          <Button
-            variant="primary"
-            href={resumeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View My Resume
+          <Button variant="primary" className="text-primary text-light">
+            <Link
+              to="/Jamaal Bernabe - Resume.pdf"
+              target="_blank"
+              className="text-light"
+            >
+              View My Resume
+            </Link>
           </Button>
         </div>
         <Button
