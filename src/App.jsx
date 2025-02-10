@@ -3,81 +3,95 @@ import {
   Container,
   Row,
   Col,
-  Button,
   Navbar,
   Nav,
-  Card,
   CardFooter,
+  Card,
 } from "react-bootstrap";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Work from "./pages/Work";
 import Projects from "./pages/Projects";
+import Contact from "./pages/Contact";
 
 const App = () => {
   return (
     <Router>
-      <Navbar bg="dark" variant="dark" expand="lg" className="px-4 shadow ">
-        <Container>
-          <Navbar.Brand
-            as={Link}
-            to="/Portfolio"
-            className="text-light font-weight-bold"
-          >
+      <div className="main">
+        <Navbar
+          bg="dark"
+          variant="dark"
+          expand="lg"
+          className="px-4 shadow"
+          sticky="top"
+        >
+          <Navbar.Brand href="#home" className="text-light font-weight-bold">
             Jamaal Bernabe
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav" className="mx-auto ">
+          <Navbar.Collapse id="responsive-navbar-nav" className="mx-auto">
             <Nav
               fill
               className="ms-auto navbar-expand-lg navbar-light"
               variant="underline"
-              defaultActiveKey="/home"
             >
               <Nav.Item>
-                <Nav.Link as={Link} to="/Portfolio" className="text-light">
+                <Nav.Link href="#home" className="text-light">
                   Home
                 </Nav.Link>
               </Nav.Item>
-
               <Nav.Item>
-                <Nav.Link as={Link} to="/Portfolio/work" className="text-light">
+                <Nav.Link href="#about" className="text-light">
+                  Skills & Education
+                </Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link href="#work" className="text-light">
                   Work
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link
-                  as={Link}
-                  to="/Portfolio/projects"
-                  className="text-light"
-                >
+                <Nav.Link href="#projects" className="text-light">
                   Projects
+                </Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link href="#contact" className="text-light">
+                  Contact
                 </Nav.Link>
               </Nav.Item>
             </Nav>
           </Navbar.Collapse>
+        </Navbar>
+
+        <Container>
+          <Row>
+            <Col>
+              <section id="home">
+                <Home />
+              </section>
+              <section id="about">
+                <About />
+              </section>
+              <section id="work">
+                <Work />
+              </section>
+              <section id="projects">
+                <Projects />
+              </section>
+              <section id="contact">
+                <Contact />
+              </section>
+            </Col>
+          </Row>
         </Container>
-      </Navbar>
-      <Container fluid className="bg-dark text-light p-0 min-vh-100">
-        <Routes>
-          <Route path="/Portfolio" element={<Home />} />
-          <Route path="/Portfolio/work" element={<Work />} />
-          <Route path="/Portfolio/projects" element={<Projects />} />
-        </Routes>
-      </Container>
-      <Container fluid className="bg-dark text-light p-0">
-        <Row className="d-flex justify-content-center py-3">
-          <Col className="text-center">
-            <Work />
-            <Projects />
-          </Col>
-        </Row>
-      </Container>
-      <CardFooter className="bg-secondary text-center py-3">
-        <p className="mb-0 text-light small">
-          © 2024 Jamaal Bernabe. All rights reserved.
-        </p>
-      </CardFooter>
+
+        <CardFooter className="text-center bg-dark">
+          <p className="mb-0 text-light small">
+            © 2025 Jamaal Bernabe. All rights reserved.
+          </p>
+        </CardFooter>
+      </div>
     </Router>
   );
 };

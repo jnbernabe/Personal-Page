@@ -1,49 +1,119 @@
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Container, Row, Col, Card, Button, CardGroup } from "react-bootstrap";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import "../App.css";
 
 function Projects() {
   return (
-    <Container className="d-flex flex-column justify-content-center min-vh-50 text-left py-5">
-      <Row className="justify-content-md-center">
-        <Col md="auto" className="d-flex justify-content-center">
-          <h1 className="display-4 text-light mb-3 ">Projects</h1>
+    <Container>
+      <Row>
+        <Col>
+          <Card className="text-center bg-dark text-light" cardStyle>
+            <Card.Body className="text-center">
+              <Card.Title className="text-center">
+                <h1 className="text-center">Projects</h1>
+              </Card.Title>
+              <Card.Text className="text-center">
+                <CardGroup>
+                  <Card className="text-center bg-primary text-dark">
+                    <Card.Header>
+                      {" "}
+                      <a
+                        href="https://github.com/jnbernabe/NaviGrade"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-dark"
+                      >
+                        <b>
+                          <h1>NaviGrade </h1>
+                        </b>
+                      </a>
+                    </Card.Header>
+                    <Card.Body>
+                      <Card.Text>
+                        {" "}
+                        <b>React</b> | <b>Node.js</b> | <b>MongoDB</b>
+                        <p>
+                          {" "}
+                          A full-stack web application that allows users to
+                          create and manage their own courses and assignments,
+                          as well as view their grades and predict their final
+                          grade.
+                        </p>
+                        <Button
+                          href="https://navigrade-ee7efdf3e932.herokuapp.com/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          variant="dark"
+                        >
+                          Visit NaviGrade on Heroku
+                        </Button>
+                      </Card.Text>
+                    </Card.Body>
+                  </Card>
+
+                  <Card className="text-center bg-primary text-dark">
+                    <Card.Header>
+                      {" "}
+                      <a
+                        href="https://github.com/jnbernabe/nlp-group1-amzFashion"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-dark"
+                      >
+                        <b>
+                          <h1>Amazon Fashion NLP</h1>
+                        </b>
+                      </a>
+                    </Card.Header>
+                    <Card.Body>
+                      <Card.Text>
+                        {" "}
+                        <b>Python</b> | <b>TensorFlow</b> | <b>Scikit-learn</b>
+                        <p>
+                          {" "}
+                          A natural language processing project that analyzes
+                          Amazon fashion reviews to predict the sentiment of the
+                          review and classify the review's rating.
+                        </p>
+                      </Card.Text>
+                    </Card.Body>
+                  </Card>
+
+                  <Card className="text-center bg-primary text-dark">
+                    <Card.Header>
+                      {" "}
+                      <a
+                        href="https://github.com/jnbernabe/AWS-Translate-polly"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-dark"
+                      >
+                        <b>
+                          <h1>AWS Image Translate</h1>
+                        </b>
+                      </a>
+                    </Card.Header>
+                    <Card.Body>
+                      <Card.Text>
+                        {" "}
+                        <b>Python</b> | <b>AWS Translate</b> | <b>AWS Polly</b>
+                        <p>
+                          {" "}
+                          A natural language processing project that uses AWS
+                          Translate to translate text in an image from one
+                          language to another and uses AWS Polly to convert the
+                          translated text to speech.
+                        </p>
+                      </Card.Text>
+                    </Card.Body>
+                  </Card>
+                </CardGroup>
+              </Card.Text>
+            </Card.Body>
+          </Card>
         </Col>
       </Row>
-      <br />
-      <Container className="d-lg-flex align-content-center justify-content-center">
-        <Card bg="dark">
-          <h2 className="h5 text-primary text-center">Bird Image Classifier</h2>
-          <ul className="text-light small mt-2">
-            <li>Achieved 81% accuracy with TensorFlow and Keras.</li>
-            <li>Improved accessibility for visually impaired users.</li>
-          </ul>
-        </Card>
-        <Card bg="dark">
-          <h2 className="h5 text-primary text-center">AWS Polly Translate</h2>
-          <ul className="text-light small mt-2">
-            <li>Utilize AWS to read and translate text in images</li>
-            <li>Implemented AWS Translate for multi-language support</li>
-            <li>Translated text read aloud using AWS Polly</li>
-          </ul>
-        </Card>
-        <Card bg="dark">
-          <h2 className="h5 text-primary text-center">NaviGrade</h2>
-          <ul className="text-light small mt-2">
-            <li>Student focused Task Tracking App</li>
-            <li>Worked on features such as grade estimation, cou.</li>
-          </ul>
-          <Button>
-            <a
-              href="https://navigrade-ee7efdf3e932.herokuapp.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-light"
-            >
-              NaviGrade on Heroku
-            </a>
-          </Button>
-        </Card>
-      </Container>
     </Container>
   );
 }
