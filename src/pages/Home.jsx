@@ -25,8 +25,8 @@ function Home() {
                 className="text-center"
                 src="https://github.com/jnbernabe.png"
                 style={{
-                  width: "400px",
-                  height: "400px",
+                  width: "15rem",
+                  height: "15rem",
                   margin: "auto",
                   borderRadius: "50%",
                 }}
@@ -36,10 +36,10 @@ function Home() {
               <Card.Body className="text-center">
                 <Card.Title className="text-center">
                   <h1 className="text-center">Jamaal Bernabe</h1>
-                  <h2 className="text-center">Full Stack Developer</h2>
+                  <h2 className="text-center">Software Developer</h2>
                 </Card.Title>
 
-                <Card.Text className="text-center mx-5">
+                <Card.Text className="text-center mx-lg-5">
                   Software Developer with 3+ years of experience building
                   scalable, high-performance applications in Python, Java, and
                   Node.js. Proven expertise in designing RESTful APIs,
